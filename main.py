@@ -4,9 +4,8 @@ import google.generativeai as genai
 from langchain_community.vectorstores import FAISS
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
-# Load Gemini API Key (from Google Cloud Console)
-GOOGLE_API_KEY = "AIzaSyAEXeooqUtIcOXcX5FPWvd_1fgLY-vKxpI"
-os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
 
 # ✅ Configure Gemini SDK
 genai.configure(api_key=GOOGLE_API_KEY)

@@ -1,13 +1,13 @@
 import os
 import json
 import faiss
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.docstore.document import Document
 
-# Load API Key
-GOOGLE_API_KEY = "AIzaSyAEXeooqUtIcOXcX5FPWvd_1fgLY-vKxpI"
-os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
 
 # Load all verses
 def load_verses(slok_folder="data/slok"):
